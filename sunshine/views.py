@@ -1,14 +1,10 @@
-from django.shortcuts import render
-
-# Create your views here.
-def home(request):
-    return render(request,'home.html')
-
-
 
 from django.shortcuts import render,redirect
 from .models import Contact
-# Create your views here.
+
+def home(request):
+    return render(request,'home.html')
+
 
 def contact(request):
     if request.method=="POST":
