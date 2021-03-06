@@ -1,10 +1,15 @@
 
 from django.shortcuts import render,redirect
-from .models import Contact
+from .models import Contact,Home1,Home2
 from django.contrib import messages
 
 def home(request):
-    return render(request,'home.html')
+    home1=Home1.objects.all()
+    home2=Home2.objects.all()
+    return render(request,'home.html',{'home1':home1,'home2':home2})
+
+def firm(request):
+    return render(request,'firm.html')
 
 
 def contact(request):

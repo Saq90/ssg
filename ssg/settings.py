@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import mimetypes
 from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -120,8 +121,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'sunshine/static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR,'asset')
+
+
+mimetypes.add_type("text/css", ".css", True)
 
 
 MESSAGE_TAGS = {
     messages.ERROR:'danger'
 }
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR,'media')
