@@ -28,7 +28,7 @@ SECRET_KEY = '86q7oj$j4-ies_8&#f22m!-%l4ta($^aos3z2&9$9h40&xd%eg'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['git.heroku.com/ssg-1.git','127.0.0.1']
+ALLOWED_HOSTS = ['ssg-1.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'sunshine/static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR,'asset')
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
