@@ -28,7 +28,7 @@ SECRET_KEY = '86q7oj$j4-ies_8&#f22m!-%l4ta($^aos3z2&9$9h40&xd%eg'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['git.heroku.com/ssg-1.git','127.0.0.1']
 
 
 # Application definition
