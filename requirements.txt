@@ -82,6 +82,7 @@ pywin32-ctypes==0.2.0
 qrcode==6.1
 requests==2.22.0
 requests-oauthlib==1.2.0
+scipy==1.6.1
 six==1.11.0
 snowballstemmer==2.1.0
 soupsieve==1.9.4
