@@ -25,9 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '86q7oj$j4-ies_8&#f22m!-%l4ta($^aos3z2&9$9h40&xd%eg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -125,6 +127,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'sunshine/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'asset')
+STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 mimetypes.add_type("text/css", ".css", True)
