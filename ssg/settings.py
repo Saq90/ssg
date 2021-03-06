@@ -127,7 +127,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'sunshine/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
+# STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
 #
 
 mimetypes.add_type("text/css", ".css", True)
@@ -137,5 +137,5 @@ MESSAGE_TAGS = {
     messages.ERROR:'danger'
 }
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR,'media')
+MEDIA_ROOT= os.path.join(BASE_DIR, "media")
+MEDIA_URL="/media/"
