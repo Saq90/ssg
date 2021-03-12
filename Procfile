@@ -1,1 +1,0 @@
-web: gunicorn ssg.wsgi
