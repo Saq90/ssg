@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Contact Us</title>
+    {% load static %}
+    <title>home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,45 +13,570 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+    <!--vendor files-->
+    <link rel="stylesheet" href="{% static 'asset/vendor/animate.css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'asset/vendor/jquery/jquery.min.js' %}">
+    <link rel="stylesheet" href="{% static 'asset/vendor/owl.carousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'asset/vendor/owl.carousel/assets/owl.theme.default.min.css' %}">
 
+
+
+
+    <style>
+        .bg-dark {
+            background-color: #a51010 !important;
+        }
+
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            background-color: transparent;
+        }
+
+        a:hover {
+            color: rgba(223, 208, 208, 0.74);
+            text-decoration: none;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgb(247, 243, 243);
+        }
+
+        .navbar-brand {
+            display: inline-block;
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            line-height: inherit;
+            white-space: nowrap;
+        }
+
+        .navbar-collapse {
+            -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+            -ms-flex-positive: 1;
+            flex-grow: 0;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 70vh;
+  background-color: rgba(31, 38, 39, 0.8);
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+}
+#hero .carousel-item {
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#hero .carousel-item::before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#hero .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#hero .carousel-content {
+  text-align: center;
+}
+#hero h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 300;
+}
+#hero .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  opacity: 0;
+}
+
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-left,
+#hero .carousel-inner .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+  transition: 0.5s;
+}
+#hero .carousel-inner .carousel-item-next,
+#hero .carousel-inner .carousel-item-prev,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+#hero .carousel-control-prev, #hero .carousel-control-next {
+  width: 10%;
+}
+
+#hero .carousel-indicators li {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: ease-in;
+  opacity: .7;
+}
+
+#hero .carousel-indicators li.active {
+  opacity: 1;
+  background-color: #01b1d7;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 90vh;
+  }
+  #hero .carousel-item {
+    height: 90vh;
+  }
+  #hero h2 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero .carousel-control-prev, #hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+@media (max-height: 500px) {
+  #hero {
+    height: 150vh;
+  }
+  #hero .carousel-item {
+    height: 150vh;
+  }
+}
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+  background: url("./assets/img/portfolio/portfolio-1.jpg") center center no-repeat;
+  background-size: cover;
+  padding: 80px 0 60px 0;
+  position: relative;
+}
+.counts::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.counts .title {
+  position: relative;
+  color: #fafafa;
+  margin-bottom: 40px;
+}
+
+.counts .title h3 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.counts .counters span {
+  font-size: 48px;
+  display: block;
+  color: #f50606;
+}
+.counts .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+
+
+.section {
+    padding: 100px 0;
+  }
+
+  @media (max-width: 575px) {
+    .section {
+      padding: 80px 0;
+    }
+  }
+
+ /*work section*/
+  .section-sm {
+    padding: 80px 0;
+  }
+  .section-title {
+    margin-bottom: 55px;
+    padding-bottom: 10px;
+  }
+
+  .section-title-sm {
+    margin-bottom: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: #666;
+  }
+
+  .section-title-border {
+    position: relative;
+  }
+
+.section-title-border-gray {
+  position: relative;
+  font-size: 2.5rem;
+  color: #be0707;
+  font-weight: 700;
+}
+
+.item h3{
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+}
+
+/*owl-Carousel*/
+
+.owl-carousel {
+    display: none;
+    width: 95%;
+    right: 3rem;
+    left: 3rem;
+    z-index: 1;
+}
+
+.owl-prev{
+  left: -30px;
+}
+.owl-next{
+  right: -30px;
+}
+.owl-prev, .owl-next{
+  position: absolute;
+  top: 30%;
+}
+.owl-prev span, .owl-next span{
+  font-size: 60px;
+  color: #787878;
+}
+.owl-theme .owl-nav[class*="owl-"]:hover{
+  background-color:transparent;
+}
+
+.card-body{
+  background: #b6b4b4;
+}
+.card-title{
+  color: rgb(0, 0, 0);
+}
+.card-body a{
+  color: black;
+  text-decoration: underline;
+}
+
+
+/*--------------------------------------------------------------
+# About List
+--------------------------------------------------------------*/
+.about-list {
+  padding-top: 0;
+}
+
+.about-list .icon-box h4 {
+  font-size: 2.8rem;
+  color: #be0707;
+  font-weight: 700;
+  margin: 5px 0 10px 60px;
+}
+
+.about-list .icon-box p {
+  font-size: 1.5rem;
+  color: #070707;
+  margin-left: 60px;
+}
+
+.about-list .image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+/*about-list ends*/
+
+/*footer*/
+.footer{
+    background-color: #a51010;
+  color: #fff;
+
+}
+.nav-item{
+  padding: 15px;
+}
+/*footer ends*/
+
+    </style>
+
+</head>
 <body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-
-<body>
-
 
 <!-- ======= Header ======= -->
 <header>
     <nav class="navbar navbar-expand-lg justify-content-center navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">SUNSHINE GROUPS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto ml-4 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">HOME</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT</a>
+                        <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/firm/">OUR FIRM</a>
+                        <a class="nav-link " href="/firm/">Our Firm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/contact/">CONTACT</a>
+                        <a class="nav-link " href="/contact/">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
-<h>firm page under working</h>
+<!--header ends here-->
+
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators">
+                <li data-target="#heroCarousel" data-slide-to="0" class="active"></li>
+
+                {% for i in range %}
+                <li data-target="#heroCarousel" data-slide-to="{{i}}" class=""></li>
+                {% endfor %}
+<!--                <li data-target="#heroCarousel" data-slide-to="2" class=""></li>-->
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+
+                <div class="carousel-item active" style="background-image: url('/media/{{home1.0.image}}');">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>SUNSHINE GROUP</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Slide 2 -->
+            {% for i in home1 %}
+                <div class="carousel-item" style="background-image: url('/media/{{i.image}}');">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown">SUNSHINE GROUP</h2>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+
+
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+<!-- End Hero -->
+
+<!--Counts Section-->
+<section id="counts" class="counts">
+    <div class="container">
+
+        <div class="text-center title">
+            <h3>OUR APPROACH</h3>
+        </div>
+
+        <div class="row counters">
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">232</span>
+                <p>Distribution & Franchises</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">521</span>
+                <p>Real Estate</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">1,463</span>
+                <p>Infrastructure</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">15</span>
+                <p>Strategic Parteners</p>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Counts Section -->
+
+<!--work-->
+ <section class="section bg-gray">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-title section-title-border-gray">OUR FIRM</h2>
+            </div>
+        </div>
+        <!--work slider-->
+        <div class="owl-carousel owl-theme">
+            {% for i in firm %}
+            <div class="ml-2 mr-2">
+                <div class="card">
+                    <img src='/media/{{i.image}}' alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.title}}</h5>
+                        <p class="card-text">{{i.desc}}</p>
+                        <a href="#" style="color: black;">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        </div>
+ </section>
+
+
+<!-- ======= About List Section ======= -->
+<section id="about-list" class="about-list">
+    <div class="container mb-3">
+        <div class="row">
+            <div class="image col-lg-6 " style="background-image: url('{% static 'asset/img/about-list-img.jpg' %}');"></div>
+              <div class="col-lg-6 ">
+                <div class="icon-box mt-5 mt-lg-0">
+                    <h4>WHAT WE DO</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, libero! Pariatur suscipit reprehenderit commodi molestias earum dolore aut exercitationem soluta culpa accusamus officia, esse dicta, facere ipsum voluptatibus eos quisquam alias laborum inventore quae, impedit sint quibusdam sit. Ratione dolorem odio autem enim quae fugiat, totam nemo ab vero dignissimos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About List Section -->
+
+<!--footer-->
+
+<footer class="footer">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">SUNSHINE GROUPS</a>
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/firm/">THE FIRM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact/">CONTACT </a>
+                </li>
+            </ul>
+            <span class="navbar-text" style="color: #fff; padding-right: 3rem;">
+                ADDRESS:</br>
+                Sunshine Auto,NH-2 Near Flyover</br>
+                Aurangabad Bihar,India, 824101
+            </span>
+        </div>
+        </div>
+    </nav>
+</footer>
+<!--footer ends-->
+
+
+<!--vendor Js file-->
+<script src="{% static 'asset/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'asset/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'asset/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+
+<!--Main JS file-->
+<script src="{% static 'asset/js/main.js' %}"></script>
+
+
+<script>
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    dots:true,
+    autoplay:true,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+  </script>
+</body>

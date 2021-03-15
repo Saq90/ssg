@@ -19,6 +19,16 @@ class Home2(models.Model):
 
 
 
+class Firm(models.Model):
+    objects = all('Firm')
+    msg_id=models.AutoField(primary_key=True)
+    title=models.CharField(max_length=200,default="")
+    desc=models.TextField()
+    image=models.ImageField(upload_to="sunshine/images",default="")
+
+    def __str__(self):
+        return self.title
+
 
 class Contact(models.Model):
     msg_id=models.AutoField(primary_key= True )
