@@ -6,14 +6,12 @@ from django.contrib import messages
 def home(request):
     home1=Home1.objects.all()
     firm=Firm.objects.all()
-    # home2=Home2.objects.all()
     return render(request,'firm.html',{'home1':home1,'firm':firm})
 
 
 def firm(request):
     home1=Home1.objects.all()
     home2=Home2.objects.all()
-    # firm=Firm.objects.all()
     return render(request,'home.html',{'home1':home1,'home2':home2})
 
 
