@@ -25,8 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '86q7oj$j4-ies_8&#f22m!-%l4ta($^aos3z2&9$9h40&xd%eg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -44,7 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+site_id = 1
 ROOT_URLCONF = 'ssg.urls'
 
 TEMPLATES = [
@@ -72,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ssg.wsgi.application'
+# WSGI_APPLICATION = 'ssg.wsgi.application'
 
 
 # Database
@@ -126,16 +125,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'sunshine/static')
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-# STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 # mimetypes.add_type("text/css", ".css", True)
 
 
 MESSAGE_TAGS = {
-    messages.ERROR:'danger'
+    messages.ERROR: 'danger'
 }
 
-MEDIA_ROOT= os.path.join(BASE_DIR, "media")
-MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
